@@ -2,18 +2,27 @@
 ### Sokly Hour
 ### Mini Project 1
 
+import pprint
 import yfinance as yf # type: ignore
-from pprint import pprint
 
-mytickers = ["MSFT", "AAPL", "", "",]
+mytickers = ["MSFT", "AAPL", "NVDA", "GME", "AMC"]
 
-msft = yf.Ticker("MSFT")
+mydata = {}
 
-# get all stock info
-# print(msft.info)
-pprint(msft.info)
+
+mytickers.sort()
+for ticker in mytickers:
+    result = yf.Ticker(ticker)
+    mydata[ticker] = {'ticker': ticker,
+                      'dayHigh': result.info['dayHigh']
+                      }
+
+pprint.pprint(mydata)
+
+
+
 
 # get historical market data
-hist = msft.history(period="1mo")
-last_10_days = hist.tail(10)
-pprint(last_10_days)
+#hist = msft.history(period="1mo")
+
+#pprint.pprint(hist)
