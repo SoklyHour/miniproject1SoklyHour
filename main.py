@@ -2,27 +2,41 @@
 ### Sokly Hour
 ### Mini Project 1
 
-import pprint
+import copy
 import yfinance as yf # type: ignore
+import numpy as np # type: ignore
+import matplotlib.pyplot as plt # type: ignore
+from pathlib import Path
 
-mytickers = ["MSFT", "AAPL", "NVDA", "GME", "AMC"]
+mytickers = ["MSFT", "IBM", "GOOG", "META", "AMZN"]
 
-mydata = {}
+try:
+    Path("charts").mkdir()
+except FileExistsError:
+    pass
 
-
-mytickers.sort()
 for ticker in mytickers:
-    result = yf.Ticker(ticker)
-    mydata[ticker] = {'ticker': ticker,
-                      'dayHigh': result.info['dayHigh']
-                      }
+    myticker = yf.Ticker(ticker)
+    history = myticker.history(period="max").tail(10)
 
-pprint.pprint(mydata)
+    closingList = []
 
+    for price in history['Close']:
+        closingList.append(price)
 
+    lowprice = copy.copy(closingList)
+    lowprice.sort()
 
+    low_price = lowprice[0]
+    high_price = lowprice[-1]
 
-# get historical market data
-#hist = msft.history(period="1mo")
+    myarray = np.array(closingList)
+    plt.plot(myarray)
+    plt.xlabel("Days Ago")
+    plt.ylabel("Closing Price")
+    plt.title(f"{ticker} last 10 Closing Prices")
+    plt.axis((1, 10, low_price-2, high_price+2))
 
-#pprint.pprint(hist)
+    plt.savefig(f"charts/{ticker}.png")
+
+    plt.show()

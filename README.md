@@ -38,4 +38,4 @@ python main.py
 Contributors names and contact info
 
 SoklyHour
-ex. [@SoklyHour](https://www.linkedin.com/in/soklyhour/)
+[@SoklyHour](https://www.linkedin.com/in/soklyhour/)
