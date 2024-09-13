@@ -2,41 +2,43 @@
 ### Sokly Hour
 ### Mini Project 1
 
-import copy
-import yfinance as yf # type: ignore
-import numpy as np # type: ignore
-import matplotlib.pyplot as plt # type: ignore
-from pathlib import Path
+import yfinance as yf
+from datetime import datetime, timedelta
+import numpy as np
+import matplotlib.pyplot as plt
+import os
 
-mytickers = ["MSFT", "IBM", "GOOG", "META", "AMZN"]
+# Create 'charts' directory if it doesn't exist
+os.makedirs("charts", exist_ok=True)
 
-try:
-    Path("charts").mkdir()
-except FileExistsError:
-    pass
+# Get today's date
+today = datetime.now()
 
-for ticker in mytickers:
-    myticker = yf.Ticker(ticker)
-    history = myticker.history(period="max").tail(10)
+# Calculate the date 10 days ago
+ten_days_ago = today - timedelta(days=15)
 
-    closingList = []
+# List of tickers to analyze
+myTickers = ["AAPL", "DIS", "GOOG", "NFLX", "MSFT"]
 
-    for price in history['Close']:
-        closingList.append(price)
+for ticker in myTickers:
+    result = yf.Ticker(ticker)
+    hist = result.history(start=ten_days_ago, end=today)
+    last10days = []
+    for date in hist['Close'][:11]:
+        last10days.append(date)
+    
+    if len(last10days) == 10:
+        myarray = np.array(last10days)
+        max_price = myarray.max() + (myarray.max()*.05)
+        min_price = myarray.min() - (myarray.min()*.05)
+        
+        # Plot the data
+        plt.plot(myarray, marker='o')
+        plt.xlabel('Days Ago')
+        plt.ylabel('Closing Price')
+        plt.axis((9, 0, min_price, max_price))
+        plt.title(f"{ticker} Last 10 Closing Prices")
+        plt.savefig(f"charts/{ticker}.png")
 
-    lowprice = copy.copy(closingList)
-    lowprice.sort()
-
-    low_price = lowprice[0]
-    high_price = lowprice[-1]
-
-    myarray = np.array(closingList)
-    plt.plot(myarray)
-    plt.xlabel("Days Ago")
-    plt.ylabel("Closing Price")
-    plt.title(f"{ticker} last 10 Closing Prices")
-    plt.axis((1, 10, low_price-2, high_price+2))
-
-    plt.savefig(f"charts/{ticker}.png")
-
-    plt.show()
+    else:
+        print(f"Insufficient data for 10 days of data. Only available for {len(last10days)} days.")
