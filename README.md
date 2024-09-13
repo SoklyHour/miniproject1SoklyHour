@@ -19,7 +19,6 @@ An in-depth paragraph about your project and overview of use.
 ### Dependencies
 
 * How to run the program
-* Step-by-step bullets
   
 Run this in the terminal:
 ```
