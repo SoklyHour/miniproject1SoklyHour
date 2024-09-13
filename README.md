@@ -16,7 +16,7 @@ An in-depth paragraph about your project and overview of use.
 ## Getting Started
 
 
-### Executing program
+### Dependencies
 
 * How to run the program
 * Step-by-step bullets
@@ -26,12 +26,14 @@ Run this in the terminal:
 pip install -r requirements.txt
 ```
 
-## Run the code
+## Executing program
 
 In the terminal, please type the following:
 ```
 python main.py
 ```
+## Output
+This should create 5 graphs in charts/ for each of the five stocks.
 
 ## Authors
 
@@ -39,3 +41,10 @@ Contributors names and contact info
 
 SoklyHour
 [@SoklyHour](https://www.linkedin.com/in/soklyhour/)
+
+
+## Acknowledgments
+Inspiration, code snippets, etc.
+* [yfinance](https://pypi.org/project/yfinance/)
+* [matplotlib](https://matplotlib.org/stable/tutorials/pyplot.html)
+* [ChatGPT](https://chatgpt.com/share/66e45887-9800-8005-b4ba-6348a9473de8)
