@@ -33,7 +33,7 @@ bokeh @ file:///opt/concourse/worker/volumes/live/65ce9588-f765-4deb-5b52-1c552a
 boto==2.49.0
 Bottleneck==1.3.2
 brotlipy==0.7.0
-certifi==2020.12.5
+certifi==2024.8.30
 cffi @ file:///opt/concourse/worker/volumes/live/0ef369cc-6ba0-47e7-75da-208c6400381d/volume/cffi_1613246948181/work
 chardet @ file:///opt/concourse/worker/volumes/live/c798b2ee-88b1-4341-6830-161a92c2399e/volume/chardet_1607706832595/work
 charset-normalizer==3.3.2
@@ -49,8 +49,9 @@ conda-repo-cli @ file:///tmp/build/80754af9/conda-repo-cli_1620168426516/work
 conda-token @ file:///tmp/build/80754af9/conda-token_1620076980546/work
 conda-verify==3.4.2
 contextlib2==0.6.0.post1
+contourpy==1.0.7
 cryptography @ file:///opt/concourse/worker/volumes/live/c515855a-effc-46df-74dc-542901b701da/volume/cryptography_1616769282442/work
-cycler==0.10.0
+cycler==0.12.1
 Cython @ file:///opt/concourse/worker/volumes/live/da4db94a-3449-4978-4400-64181f888dab/volume/cython_1618435143829/work
 cytoolz==0.11.0
 dask @ file:///tmp/build/80754af9/dask-core_1617390489108/work
@@ -67,6 +68,7 @@ fastcache==1.1.0
 filelock @ file:///home/linux1/recipes/ci/filelock_1610993975404/work
 flake8 @ file:///tmp/build/80754af9/flake8_1615834841867/work
 Flask @ file:///home/ktietz/src/ci/flask_1611932660458/work
+fonttools==4.53.1
 frozendict==2.4.4
 fsspec @ file:///tmp/build/80754af9/fsspec_1617959894824/work
 future==0.18.2
@@ -77,10 +79,11 @@ greenlet @ file:///opt/concourse/worker/volumes/live/de3154a2-fbbd-4797-71f5-5fe
 h5py==2.10.0
 HeapDict==1.0.1
 html5lib @ file:///tmp/build/80754af9/html5lib_1593446221756/work
-idna @ file:///home/linux1/recipes/ci/idna_1610986105248/work
+idna==3.8
 imageio @ file:///tmp/build/80754af9/imageio_1617700267927/work
 imagesize @ file:///home/ktietz/src/ci/imagesize_1611921604382/work
 importlib-metadata @ file:///opt/concourse/worker/volumes/live/a634a87c-b5e5-41bd-628d-cd0413666c93/volume/importlib-metadata_1617877368300/work
+importlib_resources==6.4.5
 iniconfig @ file:///home/linux1/recipes/ci/iniconfig_1610983019677/work
 intervaltree @ file:///tmp/build/80754af9/intervaltree_1598376443606/work
 ipykernel @ file:///opt/concourse/worker/volumes/live/88f541d3-5a27-498f-7391-f2e50ca36560/volume/ipykernel_1596206680118/work/dist/ipykernel-5.3.4-py3-none-any.whl
@@ -106,7 +109,7 @@ jupyterlab-pygments @ file:///tmp/build/80754af9/jupyterlab_pygments_16014907206
 jupyterlab-server @ file:///tmp/build/80754af9/jupyterlab_server_1617134334258/work
 jupyterlab-widgets @ file:///tmp/build/80754af9/jupyterlab_widgets_1609884341231/work
 keyring @ file:///opt/concourse/worker/volumes/live/107edf16-ab8b-49bb-692b-65f944af2b43/volume/keyring_1614616747185/work
-kiwisolver @ file:///opt/concourse/worker/volumes/live/0b2f3e77-eaa3-4995-7dd0-c994762fcbde/volume/kiwisolver_1612282417472/work
+kiwisolver==1.4.7
 lazy-object-proxy @ file:///opt/concourse/worker/volumes/live/e4bc3ba3-f365-4387-5772-cbb667714c62/volume/lazy-object-proxy_1616529072711/work
 libarchive-c @ file:///tmp/build/80754af9/python-libarchive-c_1617780486945/work
 llvmlite==0.36.0
@@ -115,7 +118,7 @@ lxml==5.3.0
 ma==1.0.2
 ma.mongo==1.0.2
 MarkupSafe @ file:///opt/concourse/worker/volumes/live/cb778296-98db-45ad-411e-6f726e102dc3/volume/markupsafe_1594371638608/work
-matplotlib @ file:///opt/concourse/worker/volumes/live/41e8cd50-031f-4dda-5787-dd3c4f4e0f08/volume/matplotlib-suite_1613407855571/work
+matplotlib==3.7.5
 mccabe==0.6.1
 mistune @ file:///opt/concourse/worker/volumes/live/95802d64-d39c-491b-74ce-b9326880ca54/volume/mistune_1594373201816/work
 mkl-fft==1.3.0
